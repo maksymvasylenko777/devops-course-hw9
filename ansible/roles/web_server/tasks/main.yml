@@ -1,0 +1,28 @@
+---
+- name: Install web server package
+  ansible.builtin.dnf:
+    name: "{{ web_server_package_name }}"
+    state: present
+
+- name: Ensure document root exists
+  ansible.builtin.file:
+    path: "{{ web_server_document_root }}"
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: Render index page
+  ansible.builtin.template:
+    src: index.html.j2
+    dest: "{{ web_server_document_root }}/index.html"
+    owner: root
+    group: root
+    mode: "0644"
+  notify: Restart web server
+
+- name: Enable and start web server
+  ansible.builtin.service:
+    name: "{{ web_server_service_name }}"
+    enabled: true
+    state: started

@@ -1,0 +1,53 @@
+temp
+
+# Terraform local directories
+**/.terraform/*
+
+# Terraform state files
+*.tfstate
+*.tfstate.*
+
+# Terraform variable files can contain secrets or local values
+*.tfvars
+*.tfvars.json
+
+# Terraform plan files can contain sensitive values
+*.tfplan
+*.tfplan.json
+tfplan
+tfplan.*
+plan.out
+plan.out.*
+
+# Terraform crash logs
+crash.log
+crash.*.log
+
+# Terraform override files are usually local-only
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Terraform CLI config can contain credentials
+.terraformrc
+terraform.rc
+
+# Keep provider lock files for reproducible Terraform runs
+!.terraform.lock.hcl
+
+# Packer local files
+packer_cache/
+*.pkrvars.hcl
+*.auto.pkrvars.hcl
+
+# Ansible local files
+*.retry
+.ansible/
+
+# Local inventory overrides can contain private hosts or keys
+inventory.local.ini
+
+# OS and editor files
+.DS_Store
+.idea/

@@ -1,0 +1,6 @@
+---
+web_server_package_name: nginx
+web_server_service_name: nginx
+web_server_document_root: /usr/share/nginx/html
+web_server_page_title: HW9 Ansible Web Server
+web_server_page_message: Nginx was installed and configured by Ansible.
